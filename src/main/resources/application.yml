@@ -1,0 +1,9 @@
+spring:            #全局配置
+  thymeleaf:
+    cache: false
+  profiles:
+    active: pro
+
+
+comment.avatar: /images/bg1.jpeg
+
