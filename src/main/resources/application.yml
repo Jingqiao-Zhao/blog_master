@@ -3,7 +3,10 @@ spring:            #全局配置
     cache: false
   profiles:
     active: pro
-
-
+#session过期时间
+server:
+  servlet:
+    session:
+      timeout: 1s
 comment.avatar: /images/bg1.jpeg
 

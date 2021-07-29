@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.dao.ViewsDao">
+
+    <select id="getYesterdayViewsForPeople" resultType="Integer">
+        select SUM(views) from t_view WHERE DATE_SUB(CURDATE(), INTERVAL 1 DAY)  &lt;= DATE(dates);
+    </select>
+
+    <select id="getAWeekViewsForPeople" resultType="Integer">
+        select SUM(views) from t_view WHERE DATE_SUB(CURDATE(), INTERVAL 7 DAY)  &lt;= DATE(dates);
+    </select>
+
+    <select id="getAMonthViewsForPeople" resultType="Integer">
+        select SUM(views) from blog.t_view;
+    </select>
+
+    <select id="getAllViewsForPeople" resultType="Integer">
+        select SUM(views) from blog.t_view;
+    </select>
+
+    <update id="updateViewsForPeople">
+        INSERT INTO t_view SET dates=CURDATE(),views=1 ON DUPLICATE KEY UPDATE views=views+1;
+    </update>
+
+</mapper>

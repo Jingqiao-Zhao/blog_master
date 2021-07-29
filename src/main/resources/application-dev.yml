@@ -1,9 +1,12 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/blog?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://120.27.202.217:3306/blog?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: 123456
+    password: Xdclass.net168
+  devtools:
+    restart:
+      enabled:ture
 
 pagehelper:                #分页插件
   helper-dialect: mysql
@@ -19,6 +22,7 @@ logging:  #日志级别
   level:
     root: info
     com.blog: debug
+
   file: log/blog-dev.log
 
   #开发环境
